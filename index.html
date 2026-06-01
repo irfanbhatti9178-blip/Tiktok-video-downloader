@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TikTok Video Downloader HD No Watermark Free | FullyTool</title>
+<meta name="description" content="FullyTool — Download TikTok videos without watermark in HD quality. Free, fast, no registration. Direct download instantly.">
+<meta name="keywords" content="tiktok downloader, download tiktok no watermark, tiktok hd downloader, fullytool tiktok">
+<meta name="robots" content="index, follow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#f5f5f7;min-height:100vh}
+
+/* NAV */
+.nav{background:#fff;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eee;position:sticky;top:0;z-index:99}
+.nav-logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;color:#5c35d1;text-decoration:none}
+.nav-logo span{background:linear-gradient(135deg,#5c35d1,#9b59b6);color:#fff;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.nav-links{display:none}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#5c35d1 0%,#8e44d9 50%,#b040d4 100%);padding:48px 20px 56px;text-align:center}
+.hero h1{color:#fff;font-size:clamp(1.5rem,5vw,2.2rem);font-weight:800;margin-bottom:10px;letter-spacing:-.5px}
+.hero p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:28px}
+
+/* INPUT BOX */
+.input-wrap{max-width:620px;margin:0 auto;background:#fff;border-radius:12px;display:flex;align-items:center;padding:6px 6px 6px 16px;gap:8px;box-shadow:0 8px 32px rgba(0,0,0,.2)}
+.url-in{flex:1;border:none;outline:none;font-size:15px;color:#333;font-family:'Inter',sans-serif;background:transparent}
+.url-in::placeholder{color:#bbb}
+.paste-btn{background:none;border:none;cursor:pointer;color:#5c35d1;font-size:13px;font-weight:600;padding:8px 4px;white-space:nowrap;font-family:'Inter',sans-serif}
+.go-btn{background:linear-gradient(135deg,#5c35d1,#8e44d9);border:none;border-radius:8px;padding:12px 28px;color:#fff;font-weight:700;font-size:15px;cursor:pointer;transition:.2s;white-space:nowrap;font-family:'Inter',sans-serif}
+.go-btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.go-btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+
+/* FEATURES */
+.features{background:#fff;border-bottom:1px solid #eee}
+.feat-grid{max-width:860px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);padding:28px 20px;gap:20px}
+.feat-item{text-align:center;padding:4px}
+.feat-item h3{font-size:15px;font-weight:700;color:#1a1a2e;margin-bottom:5px}
+.feat-item p{font-size:13px;color:#777;line-height:1.5}
+
+/* MAIN CONTENT */
+.main{max-width:860px;margin:0 auto;padding:36px 20px}
+
+/* LOADER */
+.loader{display:none;text-align:center;padding:36px 0 28px}
+.loader.on{display:block}
+.circle-wrap{position:relative;width:96px;height:96px;margin:0 auto 18px}
+.circle-wrap svg{width:96px;height:96px;transform:rotate(-90deg)}
+.circle-bg{fill:none;stroke:#ede9ff;stroke-width:6}
+.circle-arc{fill:none;stroke:url(#cgrad);stroke-width:6;stroke-linecap:round;stroke-dasharray:251;stroke-dashoffset:251;animation:spinArc 1.6s ease-in-out infinite}
+@keyframes spinArc{0%{stroke-dashoffset:251;opacity:.4}50%{stroke-dashoffset:50;opacity:1}100%{stroke-dashoffset:251;opacity:.4}}
+.circle-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:28px;animation:iconPulse 1.6s ease-in-out infinite}
+@keyframes iconPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.7}50%{transform:translate(-50%,-50%) scale(1.15);opacity:1}}
+.loader-text{color:#7c5cbf;font-size:13px;font-weight:600;letter-spacing:.3px;animation:fadeText 1.6s ease-in-out infinite}
+@keyframes fadeText{0%,100%{opacity:.5}50%{opacity:1}}
+
+/* RESULT */
+.result{display:none;margin-top:20px}
+.result.on{display:block;animation:fi .35s ease}
+@keyframes fi{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.vinfo{background:#f8f7ff;border:1px solid #e8e2ff;border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.vthumb{width:68px;height:68px;border-radius:10px;object-fit:cover;flex-shrink:0;background:#e0d8ff}
+.vthumb-ph{width:68px;height:68px;border-radius:10px;background:linear-gradient(135deg,#5c35d1,#b040d4);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+.vmeta h3{font-size:13px;color:#1a1a2e;margin-bottom:3px;line-height:1.4;font-weight:600}
+.vmeta p{font-size:12px;color:#999}
+.vtag{display:inline-block;background:#ede9ff;color:#5c35d1;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;margin-top:4px}
+.dbtn-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dbtn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 10px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;border:none;font-family:'Inter',sans-serif;color:#fff;transition:.2s;position:relative;overflow:hidden}
+.dbtn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.dbtn:disabled{opacity:.55;cursor:not-allowed;transform:none;filter:none}
+.d1{background:linear-gradient(135deg,#28a745,#1e8c3a)}
+.d2{background:linear-gradient(135deg,#fd7e14,#e8590c)}
+.d3{background:linear-gradient(135deg,#5c35d1,#8e44d9)}
+.d4{background:linear-gradient(135deg,#0d6efd,#0a4fcf)}
+.dbtn .prog{position:absolute;left:0;top:0;height:100%;background:rgba(255,255,255,.18);width:0%;transition:width .3s;border-radius:10px}
+.err{background:#fff0f0;color:#c0392b;padding:12px 16px;border-radius:10px;margin-top:14px;display:none;font-size:13px;text-align:center;border:1px solid #ffd5d5}
+.err.on{display:block}
+
+/* HOW TO */
+.how-section{background:linear-gradient(135deg,#5c35d1,#8e44d9);border-radius:18px;padding:28px 28px 24px;margin-top:36px}
+.how-section h2{color:#fff;font-size:1.1rem;font-weight:700;margin-bottom:20px}
+.how-italic{color:rgba(255,255,255,.7);font-size:13px;font-style:italic;margin-bottom:16px}
+.steps{display:flex;flex-direction:column;gap:14px}
+.step{display:flex;align-items:flex-start;gap:14px}
+.step-num{font-size:2.2rem;font-weight:900;color:rgba(255,255,255,.15);line-height:1;flex-shrink:0;width:32px}
+.step-body h4{color:#fff;font-size:14px;font-weight:700;margin-bottom:3px}
+.step-body p{color:rgba(255,255,255,.75);font-size:13px;line-height:1.6}
+
+/* ABOUT + FEATURES SECTION */
+.about-section{margin-top:36px;background:#fff;border-radius:18px;padding:28px}
+.about-section h2{font-size:1.15rem;font-weight:800;color:#1a1a2e;margin-bottom:12px;text-align:center}
+.about-section p{color:#666;font-size:14px;line-height:1.8;margin-bottom:14px;text-align:center}
+.feat3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.f3item{background:#f8f7ff;border-radius:12px;padding:18px 14px;text-align:center}
+.f3item .icon{font-size:28px;margin-bottom:8px}
+.f3item h4{font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:4px}
+.f3item p{font-size:12px;color:#888;line-height:1.5}
+
+/* BLOG */
+.blog{margin-top:36px;background:#fff;border-radius:18px;padding:32px 28px}
+.blog h2{font-size:1.05rem;font-weight:800;color:#1a1a2e;margin:24px 0 10px}
+.blog h2:first-child{margin-top:0}
+.blog p{color:#555;font-size:14px;line-height:1.85;margin-bottom:10px}
+
+/* FAQ */
+.faq{margin-top:36px;background:#fff;border-radius:18px;padding:32px 28px}
+.faq h2{font-size:1.1rem;font-weight:800;color:#1a1a2e;margin-bottom:20px;text-align:center}
+.faq-item{border-bottom:1px solid #f0f0f5;padding:14px 0}
+.faq-item:last-child{border-bottom:none;padding-bottom:0}
+.faq-q{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:5px}
+.faq-a{font-size:13px;color:#666;line-height:1.7}
+
+/* FOOTER */
+.foot{text-align:center;padding:28px 20px;color:#aaa;font-size:12px}
+.foot span{color:#5c35d1;font-weight:600}
+
+@media(max-width:600px){
+  .feat-grid{grid-template-columns:1fr;gap:12px}
+  .feat3{grid-template-columns:1fr;gap:10px}
+  .dbtn-grid{grid-template-columns:1fr}
+  .how-section{padding:22px 18px}
+  .about-section,.blog,.faq{padding:22px 16px}
+  .input-wrap{flex-wrap:wrap;border-radius:10px}
+  .go-btn{width:100%;border-radius:8px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="#">
+    <span>⬇</span> FullyTool
+  </a>
+
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>TikTok Video Downloader</h1>
+  <p>Download TikTok videos without watermark — HD quality, free, no sign-up needed</p>
+  <div class="input-wrap">
+    <input class="url-in" id="urlIn" type="text" placeholder="Insert a TikTok link here">
+    <button class="paste-btn" onclick="pasteLink()">📋 Paste</button>
+    <button class="go-btn" id="goBtn">Download</button>
+  </div>
+</div>
+
+<!-- FEATURES BAR -->
+<div class="features">
+  <div class="feat-grid">
+    <div class="feat-item">
+      <h3>Unlimited</h3>
+      <p>Save TikTok videos as much as you need — without any limits.</p>
+    </div>
+    <div class="feat-item">
+      <h3>No Watermark!</h3>
+      <p>Download TikTok video in MP4 or remove the TT logo completely.</p>
+    </div>
+    <div class="feat-item">
+      <h3>MP4 and MP3</h3>
+      <p>Save files in HD quality, convert TikTok to MP4 or MP3.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="circle-wrap">
+      <svg viewBox="0 0 96 96">
+        <defs>
+          <linearGradient id="cgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#5c35d1"/>
+            <stop offset="100%" style="stop-color:#b040d4"/>
+          </linearGradient>
+        </defs>
+        <circle class="circle-bg" cx="48" cy="48" r="40"/>
+        <circle class="circle-arc" cx="48" cy="48" r="40"/>
+      </svg>
+      <div class="circle-icon">🎵</div>
+    </div>
+    <p class="loader-text">Fetching video info...</p>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result" id="result">
+    <div class="vinfo">
+      <img class="vthumb" id="vthumb" src="" alt="" onerror="this.style.display='none';document.getElementById('vph').style.display='flex'">
+      <div class="vthumb-ph" id="vph" style="display:none">🎵</div>
+      <div class="vmeta">
+        <h3 id="vtitle">Video Ready!</h3>
+        <p id="vauthor">TikTok</p>
+        <span class="vtag">✅ HD Available</span>
+      </div>
+    </div>
+    <div class="dbtn-grid">
+      <button class="dbtn d2" id="dlHD" onclick="startDownload('dlHD')">
+        <span class="prog" id="prog-dlHD"></span>
+        <span class="btn-label">🎥 Download Video MP4</span>
+      </button>
+      <button class="dbtn d3" id="dlAU" onclick="startDownload('dlAU')">
+        <span class="prog" id="prog-dlAU"></span>
+        <span class="btn-label">🎵 Download Audio MP3</span>
+      </button>
+    </div>
+  </div>
+  <div class="err" id="err"></div>
+
+  <!-- HOW TO USE -->
+  <div class="how-section">
+    <h2>How to download TikTok without watermark?</h2>
+    <p class="how-italic">Here's how it's done:</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Find a TikTok Video</h4>
+          <p>Open the TikTok app on your mobile or visit TikTok.com on desktop. Scroll to find the video you want to save.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>Copy the Link</h4>
+          <p>Tap the Share button on the right side of the screen. Select "Copy Link" from the menu that appears.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>Download with FullyTool</h4>
+          <p>Paste the copied link into the input box above and click Download. Your video saves directly to your device — no new tab, no extra steps.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="about-section">
+    <h2>Download TikTok Videos Online — Free & Fast</h2>
+    <p>FullyTool is a free TikTok downloader that saves videos in HD quality without any watermark. No app needed, no account required — just paste a link and get your file instantly.</p>
+    <div class="feat3">
+      <div class="f3item">
+        <div class="icon">⚡</div>
+        <h4>Instant Download</h4>
+        <p>No waiting, no queue. Your video downloads directly the moment you click.</p>
+      </div>
+      <div class="f3item">
+        <div class="icon">🔒</div>
+        <h4>Safe & Private</h4>
+        <p>No login, no tracking. We never access your TikTok account.</p>
+      </div>
+      <div class="f3item">
+        <div class="icon">📱</div>
+        <h4>All Devices</h4>
+        <p>Works on Android, iPhone, Windows, and Mac — any browser.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOG ARTICLE -->
+  <div class="blog">
+    <h2>Why People Use FullyTool to Save TikTok Videos</h2>
+    <p>TikTok has grown into one of the most watched video platforms in the world. Every day millions of people discover videos they want to keep — funny clips, recipes, tutorials, music, motivational content. But TikTok's own download feature is limited and always leaves a watermark on the file. FullyTool solves that completely.</p>
+
+    <h2>The Problem With Other Downloaders</h2>
+    <p>Most TikTok download tools open the video in a new browser tab instead of saving it. You end up having to tap the three-dot menu and manually save from there — which is slow and confusing, especially on mobile. FullyTool uses a direct download method that saves the file straight to your Downloads folder with a single tap. You even see the download progress right on the button.</p>
+
+    <h2>No Watermark — Clean, Professional Video Files</h2>
+    <p>When TikTok generates a downloadable version through its own app, it burns a visible logo and username into the video. FullyTool fetches the original source file the creator uploaded — clean and watermark-free. This makes it perfect for saving videos to your personal gallery, sharing on Instagram Reels, WhatsApp Status, or YouTube Shorts without any branding in the way.</p>
+
+    <h2>HD Quality — Get the Best Resolution</h2>
+    <p>TikTok compresses its streaming videos to save bandwidth. When you use the HD button on FullyTool, you get the highest resolution version available — often 1080p — which looks sharper on large screens, in presentations, or when editing. For quick shares, the standard no-watermark version downloads faster and is perfectly fine for most uses.</p>
+
+    <h2>Save Audio as MP3</h2>
+    <p>TikTok is full of trending sounds, original music, and voice content. The Audio MP3 option extracts just the sound from any TikTok video and saves it as a standard MP3 file that works in any music app, podcast player, or audio editor. If you find a great track in a video and want it for your playlist — this is the fastest way to get it.</p>
+
+    <h2>Works on Every Device, No App Needed</h2>
+    <p>Because FullyTool runs entirely in the browser, there is nothing to install. It works the same on an Android phone, an iPhone, a Windows laptop, or a Mac. Open any browser, paste your link, and download. On Android the file goes straight to your Downloads folder. On iPhone it saves to the Files app, where you can move it to Photos with one tap.</p>
+
+    <h2>Completely Free — No Hidden Charges</h2>
+    <p>FullyTool is 100% free with no download limits, no premium tier, and no registration required. Our goal is simple — to give everyone a reliable, fast, and honest tool for saving TikTok content without any hassle. Paste your link and get your file. That is the whole experience.</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">Is FullyTool completely free?</div>
+      <div class="faq-a">Yes, 100% free. No subscription, no payment, no hidden charges — unlimited downloads for everyone.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need to create an account?</div>
+      <div class="faq-a">No account needed. Just paste the TikTok link and download. No email, no sign-up.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why does the video download directly instead of opening in a new tab?</div>
+      <div class="faq-a">FullyTool uses a blob-based download method that saves the file directly to your device — the same way proper download managers work.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I download private TikTok videos?</div>
+      <div class="faq-a">No. FullyTool only works with public videos. Private account content cannot be accessed.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Where is the downloaded file saved?</div>
+      <div class="faq-a">On Android it goes to your Downloads folder. On iPhone it saves to the Files app. On PC/Mac it saves to your default downloads location.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does it work on iPhone?</div>
+      <div class="faq-a">Yes. Open FullyTool in Safari on iOS, paste your link, and download. The file saves to the Files app and can be moved to Photos from there.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="foot">© 2026 <span>FullyTool</span> · Free TikTok Video Downloader · Not affiliated with TikTok or ByteDance</div>
+
+<script>
+const urlIn = document.getElementById('urlIn');
+const goBtn = document.getElementById('goBtn');
+const dlData = {};
+let copyUrl = '';
+
+goBtn.onclick = fetchIt;
+urlIn.onkeypress = e => { if(e.key==='Enter') fetchIt(); };
+
+function pasteLink(){
+  navigator.clipboard.readText().then(t=>{ if(t) urlIn.value=t; }).catch(()=>{});
+}
+
+async function fetchIt() {
+  const url = urlIn.value.trim();
+  if(!url) return showErr('Please paste a TikTok link!');
+  if(!url.includes('tiktok.com') && !url.includes('vm.tiktok') && !url.includes('vt.tiktok'))
+    return showErr('Please paste a valid TikTok link.');
+
+  show('loader'); hide('result'); hide('err');
+  goBtn.disabled = true; goBtn.textContent = 'Processing...';
+
+  try {
+    const r = await fetch('https://tikwm.com/api/?url='+encodeURIComponent(url)+'&hd=1');
+    const d = await r.json();
+    hide('loader'); goBtn.disabled=false; goBtn.textContent='Download';
+
+    if(d && d.data) {
+      const v = d.data;
+      const img = document.getElementById('vthumb');
+      const ph  = document.getElementById('vph');
+      if(v.cover){ img.src=v.cover; img.style.display='block'; ph.style.display='none'; }
+      else { img.style.display='none'; ph.style.display='flex'; }
+      if(v.title) document.getElementById('vtitle').textContent = v.title.length>60 ? v.title.slice(0,60)+'…' : v.title;
+      if(v.author?.nickname) document.getElementById('vauthor').textContent = '👤 @'+v.author.nickname;
+
+      const id = v.id;
+      const nowmUrl  = 'https://tikwm.com/video/'+id+'.mp4';
+      const hdUrl    = v.hdplay || nowmUrl;
+      const audioUrl = v.music  || '';
+      copyUrl = nowmUrl;
+
+      dlData['dlNW'] = { url: nowmUrl,  name: 'tiktok_nowm_'+id+'.mp4',  type: 'video/mp4' };
+      dlData['dlHD'] = { url: hdUrl,    name: 'tiktok_hd_'+id+'.mp4',    type: 'video/mp4' };
+      dlData['dlAU'] = { url: audioUrl, name: 'tiktok_audio_'+id+'.mp3', type: 'audio/mpeg' };
+
+      const auBtn = document.getElementById('dlAU');
+      if(!audioUrl){ auBtn.disabled=true; auBtn.style.opacity='.4'; }
+      else { auBtn.disabled=false; auBtn.style.opacity='1'; }
+
+      show('result');
+      document.getElementById('result').scrollIntoView({behavior:'smooth'});
+    } else {
+      showErr('Could not fetch. Check the link is correct & video is public.');
+    }
+  } catch(e) {
+    hide('loader'); goBtn.disabled=false; goBtn.textContent='Download';
+    showErr('Network error. Check your connection.');
+  }
+}
+
+async function startDownload(btnId) {
+  const info = dlData[btnId];
+  if(!info || !info.url) return;
+  const btn   = document.getElementById(btnId);
+  const prog  = document.getElementById('prog-'+btnId);
+  const label = btn.querySelector('.btn-label');
+  btn.disabled = true;
+  label.textContent = '⏳ Downloading...';
+  prog.style.width = '10%';
+  try {
+    const response = await fetch(info.url);
+    if(!response.ok) throw new Error('Fetch failed');
+    const contentLength = response.headers.get('content-length');
+    const total = contentLength ? parseInt(contentLength, 10) : 0;
+    let loaded = 0;
+    const reader = response.body.getReader();
+    const chunks = [];
+    while(true) {
+      const { done, value } = await reader.read();
+      if(done) break;
+      chunks.push(value);
+      loaded += value.length;
+      if(total > 0) {
+        const pct = Math.round((loaded / total) * 90) + 10;
+        prog.style.width = pct + '%';
+        label.textContent = '⬇️ ' + pct + '%';
+      } else {
+        prog.style.width = '70%';
+        label.textContent = '⬇️ Downloading...';
+      }
+    }
+    const blob = new Blob(chunks, { type: info.type });
+    const blobUrl = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = blobUrl;
+    a.download = info.name;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(blobUrl), 10000);
+    prog.style.width = '100%';
+    label.textContent = '✅ Downloaded!';
+    setTimeout(() => {
+      prog.style.width = '0%';
+      label.textContent = getDefaultLabel(btnId);
+      btn.disabled = false;
+    }, 3000);
+  } catch(err) {
+    prog.style.width = '0%';
+    label.textContent = getDefaultLabel(btnId);
+    btn.disabled = false;
+    showErr('Direct download failed. Opening in new tab.');
+    window.open(info.url, '_blank');
+  }
+}
+
+function getDefaultLabel(btnId){
+  return {dlHD:'🎥 Download Video MP4',dlAU:'🎵 Download Audio MP3'}[btnId]||'Download';
+}
+function copyLink(){}
+function show(id){ document.getElementById(id).classList.add('on'); }
+function hide(id){ document.getElementById(id).classList.remove('on'); }
+function showErr(msg){ const e=document.getElementById('err'); e.textContent='❌ '+msg; show('err'); setTimeout(()=>hide('err'),7000); }
+</script>
+</body>
+</html>
